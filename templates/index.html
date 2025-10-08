@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Summarizer</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f9f9f9; }
+        textarea { width: 100%; height: 200px; padding: 10px; }
+        .result { margin-top: 20px; padding: 10px; background: #e8f4ea; }
+        button { padding: 10px 20px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Text Summarizer</h2>
+    <form action="/summarize" method="post">
+        <textarea name="text" placeholder="Paste your text here..."></textarea><br>
+        <button type="submit">Summarize</button>
+    </form>
+
+    {% if summary %}
+    <div class="result">
+        <h3>Summary:</h3>
+        <p>{{ summary }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
